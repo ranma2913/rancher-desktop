@@ -76,4 +76,6 @@ jobs:
       if: steps.changed.outputs.changed
       run: |
         git show
-        git push origin ${{ github.head_ref }}
+        git push origin "$GITHUB_HEAD_REF"
+      env:
+        GITHUB_HEAD_REF: ${{ github.head_ref }}
